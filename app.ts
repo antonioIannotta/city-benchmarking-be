@@ -2,7 +2,9 @@ import express, { Application } from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import signUpRoutes from './routes/signUpRoutes';
+import loginRoutes from './routes/signUpRoutes';
 import connectDB from './config/mongoose'; // Import your mongoose connection
+import { userLogin } from './controllers/authenticationController';
 
 dotenv.config();
 
@@ -16,6 +18,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use('/', signUpRoutes);
+app.use('/', loginRoutes);
 
 // Error Handling Middleware
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
