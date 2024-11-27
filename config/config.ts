@@ -4,5 +4,5 @@ dotenv.config();
 
 export const config = {
     port: process.env.PORT || 3000,
-    databaseURL: process.env.DATABASE_URL || 'mongodb://localhost:27017/CityBenchmarking'
+    databaseURL: process.env.DATABASE_URL || 'mongodb://localhost:27017/User'
 };

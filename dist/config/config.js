@@ -8,5 +8,5 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 exports.config = {
     port: process.env.PORT || 3000,
-    databaseURL: process.env.DATABASE_URL || 'mongodb://localhost:27017/CityBenchmarking'
+    databaseURL: process.env.DATABASE_URL || 'mongodb://localhost:27017/User'
 };

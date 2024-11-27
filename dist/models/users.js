@@ -27,9 +27,20 @@ const mongoose_1 = __importStar(require("mongoose"));
 const userSchema = new mongoose_1.Schema({
     'username': { type: String, required: true },
     'email': { type: String, required: true },
-    'salary': { type: Number, required: true },
+    'grossSalary': { type: Number, required: true },
     'city': { type: String, required: true },
-    'interests': { type: (Array), required: true }
+    'region': { type: String, required: false },
+    'country': { type: String, required: false },
+    'company': { type: String, required: true },
+    'yoE': { type: Number, required: true },
+    'yoEwithinTheCompany': { type: Number, required: true },
+    'weekelyRemoteWorking': { type: Boolean, required: true },
+    'weekelyRemoteWorkingInDays': { type: Number, required: false },
+    'industry': { type: String, required: true },
+    'jobTitle': { type: String, required: true },
+    'ticketRestaurant': { type: Boolean, required: true },
+    'ticketRestaurantAmount': { type: Number, required: false },
+    'ticketRestaurantValue': { type: Number, required: false }
 }, { collection: 'users' });
 const User = mongoose_1.default.model('User', userSchema);
 exports.default = User;

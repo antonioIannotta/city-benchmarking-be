@@ -3,8 +3,8 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import signUpRoutes from './routes/signUpRoutes';
 import loginRoutes from './routes/signUpRoutes';
+import userRoute from './routes/userRoute';
 import connectDB from './config/mongoose'; // Import your mongoose connection
-import { userLogin } from './controllers/authenticationController';
 
 dotenv.config();
 
@@ -14,11 +14,12 @@ const app: Application = express();
 connectDB(); // Call the function to connect to MongoDB
 
 // Middleware
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Routes
 app.use('/', signUpRoutes);
 app.use('/', loginRoutes);
+app.use('/', userRoute);
 
 // Error Handling Middleware
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
