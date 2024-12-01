@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import User from "../models/users";
 
-export const user = async (req: Request, res: Response) => {
+export const userInsert = async (req: Request, res: Response) => {
     try {
         const requestBody = req.body;
         const user = new User({
@@ -29,3 +29,16 @@ export const user = async (req: Request, res: Response) => {
         console.log(error);
     }
 };
+
+export const userUpdate = async (req: Request, res: Response) => {
+    try {
+        const requestBody = req.body;
+        let userDoc = await User.find({username: requestBody.username}).exec();
+    } catch (error) {
+
+    }
+};
+
+function updateUser(userDoc: Document, requestBody: any): void {
+    //TODO: insert here the logic to modify the user document
+}

@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { user } from '../controllers/userInfoController';
+import { userInsert, userUpdate } from '../controllers/userInfoController';
 
-const router = Router();
+const router: Router = Router();
 
-router.post('/user', user);
+router.post('/user', userInsert);
+router.put('/user', userUpdate);
 
 export default router;

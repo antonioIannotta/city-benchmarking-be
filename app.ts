@@ -10,10 +10,8 @@ dotenv.config();
 
 const app: Application = express();
 
-// Connect to MongoDB
-connectDB(); // Call the function to connect to MongoDB
+connectDB();
 
-// Middleware
 app.use(express.json());
 
 // Routes
@@ -21,7 +19,6 @@ app.use('/', signUpRoutes);
 app.use('/', loginRoutes);
 app.use('/', userRoute);
 
-// Error Handling Middleware
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
   console.error(err.stack);
   res.status(500).send('Something went wrong!');

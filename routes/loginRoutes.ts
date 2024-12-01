@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { userLogin } from '../controllers/authenticationController';
 
-const router = Router();
+const router: Router = Router();
 
 router.post('/login', userLogin);
 
