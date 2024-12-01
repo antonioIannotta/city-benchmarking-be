@@ -1,6 +1,6 @@
 import  mongoose, { Schema, Document} from 'mongoose';
 
-interface IUser extends Document {
+export interface IUser extends Document {
     username: String,
     email: String,
     grossSalary: Number,
