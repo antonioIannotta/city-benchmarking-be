@@ -7,7 +7,7 @@ const parseNumber = (value: any, fallback?: number): number | undefined => {
     return isNaN(parsed) ? fallback : parsed;
 };
 
-export const userInsert = async (req: Request, res: Response): Promise<Response> => {
+export const userInsert = async (req: Request, res: Response): Promise<any> => {
     try {
         const {
             username,
@@ -59,7 +59,7 @@ export const userInsert = async (req: Request, res: Response): Promise<Response>
     }
 };
 
-export const userUpdate = async (req: Request, res: Response) => {
+export const userUpdate = async (req: Request, res: Response): Promise<any> => {
     try {
         const { username, ...updates } = req.body;
 
